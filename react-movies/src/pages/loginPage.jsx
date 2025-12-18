@@ -35,7 +35,7 @@ const LoginPage = () => {
             {/* Login web form  */}
             <button onClick={login}>Log in</button>
             <p>Not Registered?
-                <Link to="/signup">Sign Up!</Link></p>
+                <Link to="/users/signup">Sign Up!</Link></p>
         </>
     );
 };

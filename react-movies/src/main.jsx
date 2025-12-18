@@ -52,9 +52,9 @@ const App = () => {
             <Route path="/reviews/:id" element={<MovieReviewPage />} />
             <Route path="/reviews/form" element={<AddMovieReviewPage />} />
             <Route path="/movies/:id" element={<MoviePage />} />
-            <Route path="/login" element={< LoginPage />} />
-            <Route path="/signup" element={< SignUpPage />} />
-            <Route path="/profile" element={< ProfilePage />} />
+            <Route path="/users/login" element={< LoginPage />} />
+            <Route path="/users/signup" element={< SignUpPage />} />
+            <Route path="/users/profile" element={< ProfilePage />} />
             <Route path="/discover" element={< HomePage />} />
             <Route path="/" element={<StartPage />} />
             <Route path="*" element={<Navigate to="/" />} />

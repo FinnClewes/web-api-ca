@@ -186,7 +186,7 @@ export const getMovieReviews = ({ queryKey }) => {
 };
 
 export const login = async (username, password) => {
-    const response = await fetch('http://localhost:8080/movies', {
+    const response = await fetch('http://localhost:8080/api/users/login', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -197,7 +197,7 @@ export const login = async (username, password) => {
 };
 
 export const signup = async (username, password) => {
-    const response = await fetch('http://localhost:8080/movies?action=register', {
+    const response = await fetch('http://localhost:8080/api/users?action=register', {
         headers: {
             'Content-Type': 'application/json'
         },

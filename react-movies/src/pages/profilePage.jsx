@@ -13,7 +13,7 @@ const ProfilePage = () => {
     ) : (
         <p>
             You must log in to see your profile! {" "}
-            <button onClick={() => navigate('/login')}>Login</button>
+            <button onClick={() => navigate('/users/login')}>Login</button>
       </p>
     );
 };

@@ -11,7 +11,7 @@ const StartPage = () => {
         </p>
         ) : (
         <p>
-            <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
+            <Link to="/users/login">Login</Link> or <Link to="/users/signup">Signup</Link>
         </p>
     );
 };

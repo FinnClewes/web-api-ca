@@ -24,7 +24,7 @@ const SiteHeader = () => {
   const navigate = useNavigate();
 
   const menuOptions = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/discover" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Watchlist", path: "/movies/watchlist" },
     { label: "Upcoming", path: "/movies/upcoming" },
@@ -32,7 +32,7 @@ const SiteHeader = () => {
     { label: "Top Rated", path: "/movies/top-rated" },
     { label: "Trending Today", path: "/movies/trending/today" },
     { label: "Trending This Week", path: "/movies/trending/this-week" },
-    //{ label: "Start Page", path:}
+    { label: "Profile", path: "/users/profile" },
   ];
 
   const handleMenuSelect = (pageURL) => {
