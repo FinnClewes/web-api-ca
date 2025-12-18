@@ -6,9 +6,12 @@ import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner';
 import WriteReview from "../components/cardIcons/writeReview";
 import RemoveFromWatchlist from "../components/cardIcons/removeFromWatchlist.jsx";
-
+import { AuthContext } from '../contexts/authContext';
+import { useNavigate } from "react-router";
 
 const WatchlistPage = () => {
+  const context = useContext(AuthContext);
+  const navigate = useNavigate();
   const {watchlist: movieIds } = useContext(MoviesContext);
 
   // Create an array of queries and run in parallel.
@@ -35,20 +38,29 @@ const WatchlistPage = () => {
 
   const toDo = () => true;
 
-  return (
-    <PageTemplate
-      title="Watchlist"
-      movies={movies}
-      action={(movie) => {
-        return (
-          <>
-            <RemoveFromWatchlist movie={movie} />
-            <WriteReview movie={movie} />
-          </>
-        );
-      }}
-    />
-  );
+    return context.isAuthenticated ? (
+      <p>
+        <PageTemplate
+          title="Watchlist"
+          movies={movies}
+          action={(movie) => {
+            return (
+              <>
+                <RemoveFromWatchlist movie={movie} />
+                <WriteReview movie={movie} />
+              </>
+            );
+          }}
+        />
+      </p>
+    ) : (
+      <p>
+        You must log in to see your Watchlist! {" "}
+        <button onClick={() => navigate('/users/login')}>Login</button>
+      </p>
+    );
+
+    
 
 };
 

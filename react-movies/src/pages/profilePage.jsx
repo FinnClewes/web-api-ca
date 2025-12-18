@@ -9,6 +9,7 @@ const ProfilePage = () => {
     return context.isAuthenticated ? (
         <p>
             User profile: {context.userName}
+            <button onClick={() => context.signout()}>Sign out</button>
         </p>
     ) : (
         <p>

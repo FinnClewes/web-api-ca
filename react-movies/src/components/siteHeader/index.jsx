@@ -33,6 +33,8 @@ const SiteHeader = () => {
     { label: "Trending Today", path: "/movies/trending/today" },
     { label: "Trending This Week", path: "/movies/trending/this-week" },
     { label: "Profile", path: "/users/profile" },
+    { label: "Login", path: "/users/login"},
+    { label: "Sign Up", path: "/users/signup"}
   ];
 
   const handleMenuSelect = (pageURL) => {

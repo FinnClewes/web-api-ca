@@ -6,9 +6,12 @@ import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner';
 import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
 import WriteReview from "../components/cardIcons/writeReview";
-
+import { AuthContext } from "../contexts/authContext"; 
+import { useNavigate } from "react-router";
 
 const FavoriteMoviesPage = () => {
+  const context = useContext(AuthContext);
+  const navigate = useNavigate();
   const {favorites: movieIds } = useContext(MoviesContext);
 
   // Create an array of queries and run in parallel.
@@ -35,8 +38,9 @@ const FavoriteMoviesPage = () => {
 
   const toDo = () => true;
 
-  return (
-    <PageTemplate
+return context.isAuthenticated ? (
+        <p>
+            <PageTemplate
       title="Favorite Movies"
       movies={movies}
       action={(movie) => {
@@ -48,7 +52,13 @@ const FavoriteMoviesPage = () => {
         );
       }}
     />
-  );
+        </p>
+    ) : (
+        <p>
+            You must log in to see your favourites! {" "}
+            <button onClick={() => navigate('/users/login')}>Login</button>
+      </p>
+    );
 
 };
 
