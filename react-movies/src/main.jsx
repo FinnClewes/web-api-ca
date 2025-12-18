@@ -17,8 +17,11 @@ import TopRatedPage from "./pages/topRatedPage";
 import SiteHeader from './components/siteHeader';
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
-
-
+import LoginPage from "./pages/loginPage";
+import SignUpPage from "./pages/signupPage";
+import StartPage from "./pages/startPage";
+import ProfilePage from "./pages/profilePage";
+import AuthContextProvider from "./contexts/authContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +38,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
+        <AuthContextProvider>
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/trending/today" element={<TrendingTodayPage />}></Route>
@@ -48,10 +52,15 @@ const App = () => {
             <Route path="/reviews/:id" element={<MovieReviewPage />} />
             <Route path="/reviews/form" element={<AddMovieReviewPage />} />
             <Route path="/movies/:id" element={<MoviePage />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={< LoginPage />} />
+            <Route path="/signup" element={< SignUpPage />} />
+            <Route path="/profile" element={< ProfilePage />} />
+            <Route path="/discover" element={< HomePage />} />
+            <Route path="/" element={<StartPage />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </MoviesContextProvider>
+        </AuthContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
