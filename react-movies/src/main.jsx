@@ -11,6 +11,7 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import TrendingTodayPage from "./pages/trendingTodayPage";
 import TrendingThisWeekPage from "./pages/trendingThisWeekPage";
+import PopularPage from "./pages/popularPage";
 //import TrendingThisMonthPage from "./pages/trendingThisMonthPage";
 import NowPlayingPage from "./pages/nowPlayingPage";
 import TopRatedPage from "./pages/topRatedPage";
@@ -43,6 +44,7 @@ const App = () => {
           <Routes>
             <Route path="/movies/trending/today" element={<TrendingTodayPage />}></Route>
             <Route path="/movies/trending/this-week" element={<TrendingThisWeekPage />}></Route>
+            <Route path="/movies/popular" element={<PopularPage />}></Route>
             {/* <Route path="/movies/trending/this-month" element={<TrendingThisMonthPage />}></Route> */}
             <Route path="/movies/now-playing" element={<NowPlayingPage />}></Route>
             <Route path="/movies/top-rated" element={<TopRatedPage />}></Route>
