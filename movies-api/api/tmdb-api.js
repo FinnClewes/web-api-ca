@@ -11,3 +11,16 @@ export const getMovies = async () => {
 
     return await response.json();
 };
+
+// not functional
+export const getMovie = (id) => {
+    return fetch(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+    ).then((response) => response.json());
+};
+
+export const getUpcomingMovies = () => {
+    return fetch(
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}`
+    ).then((response) => response.json());
+};

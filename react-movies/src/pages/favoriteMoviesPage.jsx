@@ -39,7 +39,7 @@ const FavoriteMoviesPage = () => {
   const toDo = () => true;
 
 return context.isAuthenticated ? (
-        <p>
+        <>
             <PageTemplate
       title="Favorite Movies"
       movies={movies}
@@ -52,12 +52,12 @@ return context.isAuthenticated ? (
         );
       }}
     />
-        </p>
+        </>
     ) : (
-        <p>
-            You must log in to see your favourites! {" "}
+        <div>
+            You must log in to see your favorites! {" "}
             <button onClick={() => navigate('/users/login')}>Login</button>
-      </p>
+      </div>
     );
 
 };

@@ -38,8 +38,8 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+      <AuthContextProvider>
         <SiteHeader />
-        <AuthContextProvider>
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/trending/today" element={<TrendingTodayPage />}></Route>

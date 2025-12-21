@@ -7,7 +7,7 @@ const StartPage = () => {
 
     return context.isAuthenticated ? (
         <p>
-            Welcome to TMDB! Wiew your <Link to="/movies/watchlist">Watchlist</Link> or your <Link to="/profile">Profile</Link>
+            Welcome to TMDB! Wiew your <Link to="/movies/watchlist">Watchlist</Link>, your <Link to="/movies/favorites">Favorites</Link>, or your <Link to="/users/profile">Profile</Link>
         </p>
         ) : (
         <p>

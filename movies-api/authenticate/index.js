@@ -4,6 +4,7 @@ import User from '../api/users/userModel';
 const authenticate = async (request, response, next) => {
     try { 
         const authHeader = request.headers.authorization;
+        console.log(request.headers.authorization);
         if (!authHeader) throw new Error('No authorization header');
 
         const token = authHeader.split(" ")[1];
